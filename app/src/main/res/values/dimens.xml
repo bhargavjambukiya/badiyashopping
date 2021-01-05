@@ -1,0 +1,138 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="drawer_width">304dp</dimen>
+
+    <dimen name="activity_padding">20dp</dimen>
+    <!-- Drawer -->
+
+
+    <!-- Common Text Size -->
+    <dimen name="title_26_sp">26sp</dimen>
+    <dimen name="title_13_sp">13sp</dimen>
+    <dimen name="title_15_sp">15sp</dimen>
+    <dimen name="title_40_sp">40sp</dimen>
+
+    <dimen name="h1">24sp</dimen>
+    <dimen name="h2">20sp</dimen>
+    <dimen name="h3">18sp</dimen>
+    <dimen name="h4">16sp</dimen>
+    <dimen name="h5">14sp</dimen>
+    <dimen name="h6">12sp</dimen>
+    <dimen name="h7">10sp</dimen>
+
+    <!-- Common dimen -->
+    <dimen name="common_1_dp">1dp</dimen>
+    <dimen name="common_2_dp">2dp</dimen>
+    <dimen name="common_3_dp">3dp</dimen>
+    <dimen name="common_4_dp">4dp</dimen>
+    <dimen name="common_5_dp">5dp</dimen>
+    <dimen name="common_6_dp">6dp</dimen>
+    <dimen name="common_8_dp">8dp</dimen>
+    <dimen name="common_10_dp">10dp</dimen>
+    <dimen name="common_12_dp">12dp</dimen>
+    <dimen name="common_14_dp">14dp</dimen>
+    <dimen name="common_18_dp">18dp</dimen>
+    <dimen name="common_20_dp">20dp</dimen>
+    <dimen name="common_22_dp">22dp</dimen>
+
+    <dimen name="common_28_dp">28dp</dimen>
+    <dimen name="common_30_dp">30dp</dimen>
+    <dimen name="common_40_dp">40dp</dimen>
+    <dimen name="common_50_dp">50dp</dimen>
+    <dimen name="common_60_dp">60dp</dimen>
+    <dimen name="common_80_dp">80dp</dimen>
+    <dimen name="common_84_dp">84dp</dimen>
+    <dimen name="common_100_dp">100dp</dimen>
+    <dimen name="common_120_dp">120dp</dimen>
+    <dimen name="common_170_dp">170dp</dimen>
+    <dimen name="common_220_dp">220dp</dimen>
+    <!-- view Height-->
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- Iteam layout Task-->
+
+    <!-- activity statuses-->
+
+    <dimen name="common_16_dp">16dp</dimen>
+
+
+    <dimen name="common_7_dp">7dp</dimen>
+    <dimen name="common_140_dp">140dp</dimen>
+    <dimen name="img_product_detail">300dp</dimen>
+    <dimen name="btn_default_height">45dp</dimen>
+    <dimen name="common_102_dp">102dp</dimen>
+    <dimen name="common_70_dp">70dp</dimen>
+    <dimen name="common_90_dp">90dp</dimen>
+    <dimen name="common_92_dp">92dp</dimen>
+
+    <dimen name="common_32_dp">32dp</dimen>
+    <dimen name="icon_size">56dp</dimen>
+    <dimen name="common_36_dp">36dp</dimen>
+    <dimen name="common_56_dp">56dp</dimen>
+    <dimen name="common_48_dp">48dp</dimen>
+    <dimen name="common_24_dp">24dp</dimen>
+
+    <dimen name="common_200_dp">200dp</dimen>
+
+    <dimen name="layout_icon_height">@dimen/common_30_dp</dimen>
+    <dimen name="layout_icon_width">@dimen/common_50_dp</dimen>
+    <dimen name="layout_icon_height_normal">@dimen/common_40_dp</dimen>
+    <dimen name="sheet_height_landscape_view">140dp</dimen>
+    <dimen name="sheet_height_square_view">180dp</dimen>
+    <dimen name="common_300_dp">300dp</dimen>
+    <dimen name="common_180_dp">180dp</dimen>
+    <dimen name="common_150_dp">150dp</dimen>
+    <dimen name="common_42_dp">42dp</dimen>
+    <dimen name="common_44_dp">44dp</dimen>
+    <dimen name="common_26_dp">26dp</dimen>
+    <dimen name="common_46_dp">46dp</dimen>
+
+    <dimen name="pl_sheet_height">180dp</dimen>
+    <dimen name="ll_sheet_height">180dp</dimen>
+    <dimen name="sl_sheet_height">180dp</dimen>
+    <dimen name="cover_image_width">180dp</dimen>
+    <dimen name="cover_image_height">200dp</dimen>
+    <dimen name="cover_image_portrait_height">240dp</dimen>
+    <dimen name="cover_book_portrait_height">260dp</dimen>
+    <dimen name="margin_book_normal">36dp</dimen>
+    <dimen name="margin_book_32_normal">32dp</dimen>
+    <dimen name="margin_book_24_normal">24dp</dimen>
+    <dimen name="margin_book_20_normal">20dp</dimen>
+    <dimen name="margin_book_10_normal">10dp</dimen>
+    <dimen name="margin_book_large">42dp</dimen>
+    <dimen name="margin_book_44">44dp</dimen>
+    <dimen name="margin_book__48">48dp</dimen>
+    <dimen name="margin_book__50">50dp</dimen>
+    <dimen name="margin_book__52">48dp</dimen>
+    <dimen name="margin_book_100">100dp</dimen>
+    <dimen name="margin_book_90">90dp</dimen>
+    <dimen name="margin_book_80">80dp</dimen>
+    <dimen name="margin_book_70">70dp</dimen>
+    <dimen name="margin_book_60">60dp</dimen>
+    <dimen name="margin_book_120">120dp</dimen>
+
+    <dimen name="margin_book_26">26dp</dimen>
+    <dimen name="margin_book_small">16dp</dimen>
+    <dimen name="caption_font_size">@dimen/h7</dimen>
+    <dimen name="margin_between_two_image">@dimen/common_3_dp</dimen>
+    <dimen name="margin_between_two_image_half">1.5dp</dimen>
+    <dimen name="padding_border_space">2dp</dimen>
+    <dimen name="size_view_height">80dp</dimen>
+    <dimen name="size_view_height_small">40dp</dimen>
+    <dimen name="dialog_margin">18dp</dimen>
+    <dimen name="cover_image_hight">300dp</dimen>
+    <dimen name="cover_image_height_portrait">350dp</dimen>
+    <dimen name="cover_image_height_landscape">300dp</dimen>
+    <dimen name="cover_landscape_width">230dp</dimen>
+    <dimen name="cover_landscape_height">200dp</dimen>
+    <dimen name="portraitHeight">300dp</dimen>
+    <dimen name="height400dp">400dp</dimen>
+    <dimen name="common_368dp">368dp</dimen>
+    <dimen name="common_288dp">288dp</dimen>
+    <dimen name="common_88dp">88dp</dimen>
+    <dimen name="common_160_dp">160dp</dimen>
+
+
+</resources>
