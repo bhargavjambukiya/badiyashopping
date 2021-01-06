@@ -6,15 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.HomeFragment">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerCarousel"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/common_180_dp"
-        android:layout_marginStart="@dimen/common_4_dp"
-        android:layout_marginEnd="@dimen/common_4_dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_180_dp"
+            android:layout_marginStart="@dimen/common_4_dp"
+            android:layout_marginEnd="@dimen/common_4_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_48_dp"
+            android:layout_gravity="bottom"
+            app:ci_height="5dp"
+            app:ci_width="5dp" />
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCategory"
@@ -25,7 +42,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPagerCarousel"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:tabIndicatorHeight="@dimen/common_3_dp"
         app:tabTextColor="@color/black"
         tools:listitem="@layout/category_row" />

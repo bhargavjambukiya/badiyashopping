@@ -75,5 +75,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'ru.superjob:kotlin-permissions:1.0.3'
     implementation 'com.android.support:multidex:1.0.3'
-
+    implementation 'me.relex:circleindicator:2.1.4'
 }

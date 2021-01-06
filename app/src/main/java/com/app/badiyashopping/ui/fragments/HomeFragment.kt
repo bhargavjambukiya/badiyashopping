@@ -47,6 +47,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, HomeReposi
             )
         val carouselAdapter = HomeCarouselAdapter(carouselList, context)
         binding.viewPagerCarousel.adapter = carouselAdapter
+        binding.indicator.setViewPager(binding.viewPagerCarousel)
+
         // TODO: 24-12-2020 Replace with dynamic data from api
         val category = CategoryModel(title = "See All", image = R.drawable.ic_all)
         val category1 = CategoryModel(title = "Fruits", image = R.drawable.ic_fruits)
@@ -56,7 +58,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, HomeReposi
         val categoryModelList = mutableListOf(category, category1, category2, category3, category4)
         val adapter = CategoryAdapter(categoryModelList, context)
         binding.recyclerViewCategory.adapter = adapter
-
         adapter.onItemClick = {
 
         }
