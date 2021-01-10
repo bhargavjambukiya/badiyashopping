@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.app.badiyashopping.data.network.AuthApi
+import com.app.badiyashopping.data.network.ApiInterface
 import com.app.badiyashopping.databinding.FragmentSignupBinding
 import com.app.badiyashopping.repository.AuthRepository
 import com.app.badiyashopping.ui.base.BaseFragment
@@ -20,7 +20,7 @@ class SignupFragment : BaseFragment<AuthViewModel, FragmentSignupBinding, AuthRe
     ) = FragmentSignupBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository() =
-        AuthRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
+        AuthRepository(remoteDataSource.buildApi(ApiInterface::class.java), userPreferences)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -2,15 +2,15 @@ package com.app.badiyashopping.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.app.badiyashopping.R
-import com.app.badiyashopping.adapter.CategoryAdapter
+import com.app.badiyashopping.adapter.HomeCategoryAdapter
 import com.app.badiyashopping.adapter.HomeCarouselAdapter
-import com.app.badiyashopping.adapter.ProductAdapter
-import com.app.badiyashopping.data.network.AuthApi
+import com.app.badiyashopping.adapter.ProductHomeAdapter
+import com.app.badiyashopping.data.network.ApiInterface
 import com.app.badiyashopping.databinding.FragmentHomeBinding
 import com.app.badiyashopping.model.CategoryModel
 import com.app.badiyashopping.model.ProductModel
@@ -28,7 +28,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, HomeReposi
     ) = FragmentHomeBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository() =
-        HomeRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
+        HomeRepository(remoteDataSource.buildApi(ApiInterface::class.java), userPreferences)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,20 +56,27 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, HomeReposi
         val category3 = CategoryModel(title = "Baby Care", image = R.drawable.ic_baby_care)
         val category4 = CategoryModel(title = "Beverages", image = R.drawable.ic_bevrages)
         val categoryModelList = mutableListOf(category, category1, category2, category3, category4)
-        val adapter = CategoryAdapter(categoryModelList, context)
+        val adapter = HomeCategoryAdapter(categoryModelList, context)
         binding.recyclerViewCategory.adapter = adapter
         adapter.onItemClick = {
-
+            if (it == 0) {
+                Navigation.findNavController(binding.recyclerViewCategory)
+                    .navigate(R.id.action_homeFragment_to_categoryFragment)
+            } else {
+                Navigation.findNavController(binding.recyclerViewCategory)
+                    .navigate(R.id.action_homeFragment_to_productFragment)
+            }
         }
 
-        val product = ProductModel(title = "Apple", image = R.drawable.apple)
-        val product1 = ProductModel(title = "Broccoli", image = R.drawable.brocoli)
-        val product2 = ProductModel(title = "Brinjal", image = R.drawable.brinjal)
-        val product3 = ProductModel(title = "banana", image = R.drawable.banana)
-        val product4 = ProductModel(title = "orange", image = R.drawable.orange)
+        val product = ProductModel(title = "Apple Royal 1 KG", image = R.drawable.apple)
+        val product1 = ProductModel(title = "Broccoli 250 g", image = R.drawable.brocoli)
+        val product2 = ProductModel(title = "Brinjal 500 g", image = R.drawable.brinjal)
+        val product3 = ProductModel(title = "banana 6 Pcs", image = R.drawable.banana)
+        val product4 = ProductModel(title = "orange 1 KG", image = R.drawable.orange)
+
 
         val productsModelList = mutableListOf(product, product1, product2, product3, product4)
-        val adapterProduct = ProductAdapter(productsModelList, context)
+        val adapterProduct = ProductHomeAdapter(productsModelList, context)
         binding.recyclerViewPopular.adapter = adapterProduct;
         adapterProduct.onItemClick = {
             val intent = Intent(context, ProductDetailActivity::class.java)
@@ -77,7 +84,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding, HomeReposi
         }
 
 
-        val newestProduct = ProductAdapter(productsModelList, context)
+        val newestProduct = ProductHomeAdapter(productsModelList, context)
         binding.recyclerViewNewestProduct.adapter = newestProduct;
         newestProduct.onItemClick = {
             val intent = Intent(context, ProductDetailActivity::class.java)

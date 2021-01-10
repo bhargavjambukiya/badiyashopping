@@ -1,10 +1,10 @@
 package com.app.badiyashopping.repository
 
 import com.app.badiyashopping.UserPreferences
-import com.app.badiyashopping.data.network.AuthApi
+import com.app.badiyashopping.data.network.ApiInterface
 
 class HomeRepository(
-    private val api: AuthApi,
+    private val apiInterface: ApiInterface,
     private val preferences: UserPreferences
 ) : BaseRepository(){
 

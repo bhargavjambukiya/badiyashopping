@@ -1,100 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.HomeFragment">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerCarousel"
+        <FrameLayout
+            android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_180_dp"
-            android:layout_marginStart="@dimen/common_4_dp"
-            android:layout_marginEnd="@dimen/common_4_dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/indicator"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_180_dp"
+                android:layout_marginStart="@dimen/common_4_dp"
+                android:layout_marginEnd="@dimen/common_4_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_48_dp"
+                android:layout_gravity="bottom"
+                app:ci_height="5dp"
+                app:ci_width="5dp" />
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCategory"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/common_48_dp"
-            android:layout_gravity="bottom"
-            app:ci_height="5dp"
-            app:ci_width="5dp" />
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_4_dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            app:tabIndicatorHeight="@dimen/common_3_dp"
+            app:tabTextColor="@color/black"
+            tools:listitem="@layout/home_category_row" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_4_dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:tabIndicatorHeight="@dimen/common_3_dp"
-        app:tabTextColor="@color/black"
-        tools:listitem="@layout/category_row" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewPopularProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_10_dp"
+            android:layout_marginLeft="@dimen/common_10_dp"
+            android:layout_marginTop="@dimen/common_4_dp"
+            android:text="Popular Products"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategory" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textViewPopularProducts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_10_dp"
-        android:layout_marginLeft="@dimen/common_10_dp"
-        android:layout_marginTop="@dimen/common_4_dp"
-        android:text="Popular Products"
-        android:textColor="@color/black"
-        android:textSize="@dimen/h4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategory" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPopular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_4_dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPopularProducts"
+            tools:listitem="@layout/home_product_row" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPopular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_4_dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPopularProducts"
-        tools:listitem="@layout/product_row" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewNewestProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_10_dp"
+            android:layout_marginLeft="@dimen/common_10_dp"
+            android:layout_marginTop="@dimen/common_4_dp"
+            android:text="Newest Products"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewPopular" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textViewNewestProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_10_dp"
-        android:layout_marginLeft="@dimen/common_10_dp"
-        android:layout_marginTop="@dimen/common_4_dp"
-        android:text="Newest Products"
-        android:textColor="@color/black"
-        android:textSize="@dimen/h4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewPopular" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewNewestProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_4_dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNewestProduct"
+            tools:listitem="@layout/home_product_row" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewNewestProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/common_4_dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNewestProduct"
-        tools:listitem="@layout/product_row" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

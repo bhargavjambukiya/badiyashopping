@@ -1,6 +1,6 @@
 package com.app.badiyashopping.data.network
 
-interface AuthApi {
+interface ApiInterface {
 
  /*   @FormUrlEncoded
     @POST("auth/login")

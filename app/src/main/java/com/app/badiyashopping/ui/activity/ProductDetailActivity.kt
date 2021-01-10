@@ -2,18 +2,19 @@ package com.app.badiyashopping.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.app.badiyashopping.R
 import com.app.badiyashopping.adapter.HomeCarouselAdapter
-import com.app.badiyashopping.adapter.ProductAdapter
+import com.app.badiyashopping.adapter.ProductHomeAdapter
 import com.app.badiyashopping.databinding.ActivityProductDetailBinding
 import com.app.badiyashopping.model.ProductModel
 
 
 class ProductDetailActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityProductDetailBinding
-    var currentPage = 0
+    var qty = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProductDetailBinding.inflate(layoutInflater)
@@ -28,6 +29,8 @@ class ProductDetailActivity : AppCompatActivity(), View.OnClickListener {
         setupProductCarousel()
         setupRelatedProduct()
         binding.textViewAdd.setOnClickListener(this)
+        binding.textViewQtyAdd.setOnClickListener(this)
+        binding.textViewQtySub.setOnClickListener(this)
     }
 
     private fun setupProductCarousel() {
@@ -51,7 +54,7 @@ class ProductDetailActivity : AppCompatActivity(), View.OnClickListener {
         val product4 = ProductModel(title = "orange", image = R.drawable.orange)
 
         val productsModelList = mutableListOf(product, product1, product2, product3, product4)
-        val adapterProduct = ProductAdapter(productsModelList, this)
+        val adapterProduct = ProductHomeAdapter(productsModelList, this)
         binding.recyclerViewRelatedProducts.adapter = adapterProduct;
         adapterProduct.onItemClick = {
             val intent = Intent(this, ProductDetailActivity::class.java)
@@ -64,11 +67,29 @@ class ProductDetailActivity : AppCompatActivity(), View.OnClickListener {
         val viewId = v?.id
         when (viewId) {
             R.id.textViewAdd -> displayQty()
+            R.id.textViewQtySub -> {
+                if (qty > 1) {
+                    qty = Integer.parseInt(binding.textViewQty.text.toString())
+                    qty--
+                    binding.textViewQty.text = qty.toString()
+                } else {
+                    binding.textViewAdd.visibility = View.VISIBLE
+                    binding.linearLayoutQty.visibility = View.INVISIBLE
+                }
+            }
+            R.id.textViewQtyAdd -> {
+                qty = Integer.parseInt(binding.textViewQty.text.toString())
+                qty++
+                binding.textViewQty.text = qty.toString()
+                Log.e("Qty",binding.textViewQty.text.toString())
+            }
         }
     }
 
     private fun displayQty() {
         binding.textViewAdd.visibility = View.GONE
         binding.linearLayoutQty.visibility = View.VISIBLE
+        qty = Integer.parseInt(binding.textViewQty.text.toString())
+        binding.textViewQty.text = qty.toString()
     }
 }

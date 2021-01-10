@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/common_4_dp"
     android:layout_marginLeft="@dimen/common_4_dp"
@@ -20,7 +20,6 @@
             android:layout_width="@dimen/common_120_dp"
             android:layout_height="@dimen/common_80_dp"
             android:src="@drawable/apple"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,77 +27,85 @@
             android:id="@+id/textViewProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/common_2_dp"
-            android:text="Apple"
+            android:paddingStart="@dimen/common_8_dp"
+            android:paddingTop="@dimen/common_8_dp"
+            android:paddingEnd="@dimen/common_8_dp"
+            android:text="Apple Royal Gala 1 KG"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />
+            app:layout_constraintStart_toEndOf="@+id/imageViewProduct"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewProductPrice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/common_8_dp"
+            android:paddingTop="@dimen/common_4_dp"
+            android:paddingEnd="@dimen/common_8_dp"
             android:text="RS 100"
-            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProduct"
             app:layout_constraintTop_toBottomOf="@+id/textViewProductName" />
+
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textViewAdd"
             android:layout_width="@dimen/common_56_dp"
-            android:layout_height="@dimen/common_24_dp"
-            android:layout_marginTop="@dimen/common_2_dp"
+            android:layout_height="@dimen/common_36_dp"
+            android:layout_marginEnd="@dimen/common_10_dp"
+            android:layout_marginRight="@dimen/common_10_dp"
             android:background="@drawable/green_button"
             android:gravity="center"
             android:text="@string/add"
             android:textColor="@color/white"
-            android:textSize="@dimen/h6"
+            android:textSize="@dimen/h4"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutQty"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewProductPrice" />
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutQty" />
 
         <LinearLayout
             android:id="@+id/linearLayoutQty"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:paddingEnd="@dimen/activity_padding"
+            android:paddingRight="@dimen/activity_padding"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewProductPrice"
             tools:visibility="visible">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewQtySub"
-                android:layout_width="@dimen/common_40_dp"
-                android:layout_height="@dimen/common_26_dp"
+                android:layout_width="@dimen/common_36_dp"
+                android:layout_height="@dimen/common_36_dp"
                 android:background="@drawable/green_button"
                 android:gravity="center"
                 android:text="@string/minus"
                 android:textColor="@color/white"
-                android:textSize="@dimen/h5"
+                android:textSize="@dimen/h2"
                 android:textStyle="bold" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewQty"
-                android:layout_width="@dimen/common_20_dp"
+                android:layout_width="@dimen/common_30_dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="1"
                 android:textColor="@color/black"
-                android:textSize="@dimen/h5" />
+                android:textSize="@dimen/h3" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewQtyAdd"
-                android:layout_width="@dimen/common_40_dp"
-                android:layout_height="@dimen/common_26_dp"
+                android:layout_width="@dimen/common_36_dp"
+                android:layout_height="@dimen/common_36_dp"
                 android:background="@drawable/green_button"
                 android:gravity="center"
                 android:text="@string/plus"
                 android:textColor="@color/white"
-                android:textSize="@dimen/h5"
+                android:textSize="@dimen/h2"
                 android:textStyle="bold" />
 
 

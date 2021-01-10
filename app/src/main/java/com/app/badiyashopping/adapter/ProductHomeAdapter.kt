@@ -5,20 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.badiyashopping.databinding.HomeProductRowBinding
 import com.app.badiyashopping.databinding.ProductRowBinding
 import com.app.badiyashopping.model.ProductModel
 
 
-class ProductAdapter(
+class ProductHomeAdapter(
     val products: MutableList<ProductModel>, val context: Context?
 ) :
-    RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ProductHomeAdapter.ViewHolder>() {
     var onItemClick: ((Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val recyclerRowBinding: ProductRowBinding =
-            ProductRowBinding.inflate(layoutInflater, parent, false)
+        val recyclerRowBinding: HomeProductRowBinding =
+            HomeProductRowBinding.inflate(layoutInflater, parent, false)
         return ViewHolder(recyclerRowBinding)
     }
 
@@ -30,7 +31,7 @@ class ProductAdapter(
         return products.size
     }
 
-    inner class ViewHolder(var recyclerRowBinding: ProductRowBinding) :
+    inner class ViewHolder(var recyclerRowBinding: HomeProductRowBinding) :
         RecyclerView.ViewHolder(recyclerRowBinding.root) {
         fun bindView(title: String?, image: Int?) {
             recyclerRowBinding.textViewProductName.text = title
@@ -39,7 +40,7 @@ class ProductAdapter(
 
         init {
             recyclerRowBinding.textViewAdd.setOnClickListener {
-                recyclerRowBinding.textViewAdd.visibility = View.INVISIBLE
+                recyclerRowBinding.textViewAdd.visibility = View.GONE
                 recyclerRowBinding.linearLayoutQty.visibility = View.VISIBLE
             }
 
@@ -51,7 +52,7 @@ class ProductAdapter(
             recyclerRowBinding.textViewQtySub.setOnClickListener {
                 var qty: Int = Integer.parseInt(recyclerRowBinding.textViewQty.text.toString())
                 if (qty == 1) {
-                    recyclerRowBinding.linearLayoutQty.visibility = View.INVISIBLE
+                    recyclerRowBinding.linearLayoutQty.visibility = View.GONE
                     recyclerRowBinding.textViewAdd.visibility = View.VISIBLE
                 } else if (qty > 0) {
                     qty--

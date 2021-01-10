@@ -44,6 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:paddingBottom="@dimen/common_30_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +81,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/activity_padding"
+                android:paddingTop="@dimen/activity_padding"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout">
@@ -89,6 +90,8 @@
                     android:id="@+id/textViewProductTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingLeft="@dimen/activity_padding"
                     android:text="Apple"
                     android:textColor="@color/black"
                     android:textSize="@dimen/h2"
@@ -101,6 +104,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_10_dp"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingLeft="@dimen/activity_padding"
                     android:text="₹ 120"
                     android:textSize="@dimen/h2"
                     android:textStyle="bold"
@@ -112,6 +117,8 @@
                     android:id="@+id/textViewAdd"
                     android:layout_width="@dimen/common_56_dp"
                     android:layout_height="@dimen/common_36_dp"
+                    android:layout_marginEnd="@dimen/common_10_dp"
+                    android:layout_marginRight="@dimen/common_10_dp"
                     android:background="@drawable/green_button"
                     android:gravity="center"
                     android:text="@string/add"
@@ -125,6 +132,8 @@
                     android:id="@+id/linearLayoutQty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/activity_padding"
+                    android:paddingRight="@dimen/activity_padding"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -169,6 +178,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_12_dp"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingEnd="@dimen/activity_padding"
                     android:text="An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today"
                     android:textSize="@dimen/h4"
                     app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +191,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_10_dp"
+                    android:paddingStart="@dimen/activity_padding"
+                    android:paddingLeft="@dimen/activity_padding"
                     android:text="@string/related_products"
                     android:textColor="@color/black"
                     android:textSize="@dimen/h4"
@@ -196,43 +209,46 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewPopularProducts"
-                    tools:listitem="@layout/product_row" />
+                    tools:listitem="@layout/home_product_row" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/common_50_dp"
-                android:layout_margin="@dimen/common_8_dp"
-                android:background="@drawable/product_detail_cart_bg"
-                android:paddingStart="@dimen/common_24_dp"
-                android:paddingEnd="@dimen/common_24_dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/materialTextView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total: 3x ₹500"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/h4"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="@dimen/common_32_dp"
-                    android:layout_height="@dimen/common_32_dp"
-                    android:src="@drawable/ic_shopping_cart_24"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/white" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_50_dp"
+        android:layout_margin="@dimen/common_8_dp"
+        android:layout_marginBottom="@dimen/common_8_dp"
+        android:background="@drawable/product_detail_cart_bg"
+        android:paddingStart="@dimen/common_24_dp"
+        android:paddingEnd="@dimen/common_24_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: 3x ₹500"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h4"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/common_32_dp"
+            android:layout_height="@dimen/common_32_dp"
+            android:src="@drawable/ic_shopping_cart_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.app.badiyashopping.R
-import com.app.badiyashopping.data.network.AuthApi
+import com.app.badiyashopping.data.network.ApiInterface
 import com.app.badiyashopping.databinding.FragmentLoginBinding
 import com.app.badiyashopping.repository.AuthRepository
-import com.app.badiyashopping.ui.activity.HomeActivity
+import com.app.badiyashopping.ui.activity.DashboardActivity
 import com.app.badiyashopping.ui.base.BaseFragment
 import com.app.badiyashopping.ui.startNewActivity
 import com.app.badiyashopping.viewmodels.AuthViewModel
@@ -23,7 +23,7 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
     ) = FragmentLoginBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository() =
-        AuthRepository(remoteDataSource.buildApi(AuthApi::class.java), userPreferences)
+        AuthRepository(remoteDataSource.buildApi(ApiInterface::class.java), userPreferences)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,7 +32,7 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
         }
 
         binding.btnLogin.setOnClickListener {
-            requireActivity().startNewActivity(HomeActivity::class.java)
+            requireActivity().startNewActivity(DashboardActivity::class.java)
         }
 
         binding.tvForgotTitle.setOnClickListener {
