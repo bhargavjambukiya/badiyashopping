@@ -30,4 +30,16 @@
         android:id="@+id/productFragment"
         android:name="com.app.badiyashopping.ui.fragments.ProductFragment"
         android:label="ProductFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.app.badiyashopping.ui.fragments.CartFragment"
+        android:label="CartFragment" />
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="com.app.badiyashopping.ui.fragments.MyOrdersFragment"
+        android:label="MyOrdersFragment" />
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.app.badiyashopping.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

@@ -44,7 +44,7 @@
             android:paddingStart="@dimen/common_8_dp"
             android:paddingTop="@dimen/common_4_dp"
             android:paddingEnd="@dimen/common_8_dp"
-            android:text="RS 100"
+            android:text="₹ 100"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageViewProduct"

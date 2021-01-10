@@ -95,26 +95,6 @@
     <dimen name="cover_image_width">180dp</dimen>
     <dimen name="cover_image_height">200dp</dimen>
     <dimen name="cover_image_portrait_height">240dp</dimen>
-    <dimen name="cover_book_portrait_height">260dp</dimen>
-    <dimen name="margin_book_normal">36dp</dimen>
-    <dimen name="margin_book_32_normal">32dp</dimen>
-    <dimen name="margin_book_24_normal">24dp</dimen>
-    <dimen name="margin_book_20_normal">20dp</dimen>
-    <dimen name="margin_book_10_normal">10dp</dimen>
-    <dimen name="margin_book_large">42dp</dimen>
-    <dimen name="margin_book_44">44dp</dimen>
-    <dimen name="margin_book__48">48dp</dimen>
-    <dimen name="margin_book__50">50dp</dimen>
-    <dimen name="margin_book__52">48dp</dimen>
-    <dimen name="margin_book_100">100dp</dimen>
-    <dimen name="margin_book_90">90dp</dimen>
-    <dimen name="margin_book_80">80dp</dimen>
-    <dimen name="margin_book_70">70dp</dimen>
-    <dimen name="margin_book_60">60dp</dimen>
-    <dimen name="margin_book_120">120dp</dimen>
-
-    <dimen name="margin_book_26">26dp</dimen>
-    <dimen name="margin_book_small">16dp</dimen>
     <dimen name="caption_font_size">@dimen/h7</dimen>
     <dimen name="margin_between_two_image">@dimen/common_3_dp</dimen>
     <dimen name="margin_between_two_image_half">1.5dp</dimen>
@@ -133,6 +113,7 @@
     <dimen name="common_288dp">288dp</dimen>
     <dimen name="common_88dp">88dp</dimen>
     <dimen name="common_160_dp">160dp</dimen>
+    <dimen name="common_34_dp">34dp</dimen>
 
 
 </resources>

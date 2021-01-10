@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_10_dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewOrderNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Order #123456"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/h2"
+        app:layout_constraintEnd_toStartOf="@+id/textViewOrderTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewOrderTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹ 200"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/h5"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewNumbersOfItems"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewNumbersOfItems" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewDeliver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_6_dp"
+        android:text="Delivered, 30 Dec"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/h5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOrderNumber" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewNumbersOfItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_6_dp"
+        android:text="Order Total (6 Items)"
+        android:textSize="@dimen/h5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeliver" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_4_dp"
+        android:paddingHorizontal="@dimen/common_18_dp"
+        android:text="View Details"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumbersOfItems" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/common_6_dp"
+        android:background="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonViewDetails" />
+</androidx.constraintlayout.widget.ConstraintLayout>

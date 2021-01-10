@@ -11,4 +11,5 @@
     <color name="tab_selected_color">#2DB936</color>
     <color name="tab_color">#A2A2A2</color>
     <color name="tab_indicator">#2DB936</color>
+    <color name="red">#F44336</color>
 </resources>

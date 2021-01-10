@@ -24,6 +24,12 @@ class DashboardActivity : AppCompatActivity() {
                 include.textViewToolbarTitle.text = resources.getText(R.string.menu_home)
             } else if (_controller.currentDestination!!.id == R.id.categoryFragment) {
                 include.textViewToolbarTitle.text = resources.getText(R.string.category)
+            } else if (_controller.currentDestination!!.id == R.id.cartFragment) {
+                include.textViewToolbarTitle.text = resources.getText(R.string.cart)
+            } else if (_controller.currentDestination!!.id == R.id.myOrdersFragment) {
+                include.textViewToolbarTitle.text = resources.getText(R.string.menu_my_order)
+            } else if (_controller.currentDestination!!.id == R.id.SettingsFragment) {
+                include.textViewToolbarTitle.text = resources.getText(R.string.menu_settings)
             }
         }
     }
